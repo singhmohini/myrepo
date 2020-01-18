@@ -10,10 +10,13 @@ pipeline{
           stage ('Analysis')
         {
             steps{
+                sh'/opt/Maven/bin/mvn clean verify sonar:sonar -Dsonar.password=admin -Dsonar.login=admin'
+                
             }
         }
         stage('Build'){
-            steps{ echo "Build is over"
+            steps{ 
+              sh  '/opt/Maven/bin/mvn clean install'
             }
         }
             stage('Test'){
