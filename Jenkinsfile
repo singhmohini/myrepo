@@ -7,6 +7,11 @@ pipeline{
                   git 'https://github.com/singhmohini/myrepo.git'
             }
         }
+          stage ('Analysis')
+        {
+            steps{
+            }
+        }
         stage('Build'){
             steps{ echo "Build is over"
             }
